@@ -102,7 +102,7 @@ ol {
 	cursor: pointer;
 }
 
-.search-form__label:hover {
+.search-form__label:has(.search-form__pseudo-checkbox):has(:hover) {
 	text-decoration: underline;
 	text-underline-offset: 2px;
 }
@@ -201,6 +201,13 @@ ol {
 	block-size: 298px;
 	color: #fff;
 	overflow: auto;
+	scrollbar-width: none;
+	padding-top: 2px;
+}
+
+.content__list-item {
+	inline-size: 394px;
+	padding: 0 0 2px 2px;
 }
 
 .content__list-item:has(.content__card-link_current) {
@@ -215,7 +222,6 @@ ol {
 	display: block;
 	inline-size: 394px;
 	text-decoration: none;
-	padding: 0 0 0 2px;
 	color: inherit;
 }
 
@@ -237,20 +243,15 @@ ol {
 	display: flex;
 	align-items: flex-start;
 	justify-content: space-between;
-	padding: 2px 2px 0 0;
 }
 
 .content__video-card:focus {
 	outline: none;
 }
 
-.content__video-card:focus-visible {
-	outline: 1px solid -webkit-focus-ring-color;
-}
-
 .content__video-card-description-container {
 	min-inline-size: 200px;
-	padding: 2px 0 0 0;
+	padding: 4px 0 0 0;
 }
 
 .content__video-card-title {
@@ -259,7 +260,9 @@ ol {
 	font-weight: 700;
 	line-height: 100%;
 	text-transform: uppercase;
-
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
 	margin: 0 0 6px 0;
 }
 
@@ -268,7 +271,7 @@ ol {
 }
 
 .content__video-card-thumbnail {
-	inline-size: 194px;
+	min-inline-size: 194px;
 	max-block-size: 103px;
 	object-fit: cover;
 	object-position: center;
@@ -285,7 +288,7 @@ ol {
 	font-size: 18px;
 	font-weight: 700;
 	background-color: transparent;
-	color: #fff;
+	color: currentColor;
 	border: 1px solid #fff;
 	cursor: pointer;
 }
@@ -296,7 +299,7 @@ ol {
 
 .button:focus-visible {
 	outline: 1px solid #fff;
-	outline-offset: 1px;
+	outline-offset: -3px;
 }
 
 .button:hover {
