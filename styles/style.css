@@ -164,7 +164,6 @@ ol {
 }
 
 .search-form__checkbox:checked + .search-form__pseudo-checkbox {
-	/* Для стилизации интерактивных элементов использовать outline */
 	border: 2px solid #000;
 	outline-offset: -1px;
 	background-color: #fff;
